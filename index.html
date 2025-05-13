@@ -5,11 +5,44 @@
   <title>兵庫県地域医療総合診療プログラム</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    body {
+      body, html {
       margin: 0;
+      padding: 0;
+      height: 100%;
       font-family: sans-serif;
-      color: white;
+      display: flex;
+      flex-direction: column;
     }
+    
+    .contents {
+      display: flex;
+      justify-content: center;
+      background-color: #f5f5f5;
+      padding: 2em;
+      flex: 1;
+      gap: 2em;
+    }
+    
+    .contents-item {
+      background: white;
+      color: black;
+      padding: 1em;
+      width: 40%;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    
+    .contents-item h2 {
+      border-top: 3px solid #333;
+      padding-top: 0.5em;
+    }
+    
+    footer {
+      background: #222;
+      color: white;
+      text-align: center;
+      padding: 1em;
+    }
+
 
     .hero {
       background-image: url("a15ac160e59865259b36.jpg");
@@ -44,25 +77,7 @@
       margin: 0 1em;
       text-decoration: none;
     }
-    .contents{
-      color: black;
-      width: 600px;
-      background-color: #f5f5f5;
-    }
-    .contents-item{
-      float: left;
-      margin:40px;
-    }
-    .contents-item h2{
-      border-top:3px solid #333;
-    }
-
-    footer {
-      background: #222;
-      color: white;
-      text-align: center;
-      padding: 1em;
-    }
+   
  
   </style>
 </head>
