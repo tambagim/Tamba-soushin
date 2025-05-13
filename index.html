@@ -44,19 +44,25 @@
     }
 
 
-    .hero {
-      flex: 1;
-      color: white;
+   .hero {
       background-image: url("a15ac160e59865259b36.jpg");
       background-size: cover;
       background-position: center;
       height: 100vh;
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
-      text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
-     }
+    }
+    
+   .hero-text {
+      padding: 2em;
+      background-color: rgba(255, 255, 255, 0.2); /* 半透明の白 */
+      backdrop-filter: blur(10px); /* 背景ぼかし */
+      border-radius: 10px;
+      text-align: center;
+      color: white;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.6);
+    }
 
 
     .hero h1 {
@@ -82,10 +88,12 @@
     <a href="contact.html">お問い合わせ</a>
   </nav>
 
-  <div class="hero">
+ <div class="hero">
+  <div class="hero-text">
     <h1>兵庫県地域医療総合診療プログラム</h1>
-    <p>地域の中核病院から学ぶ、実践的な総合診療</p>
+    <p>地域の中核病院から学ぶ、実践的な総合診療。</p>
   </div>
+</div>
   
   <div class="contents">
     <div class="contents-item">
