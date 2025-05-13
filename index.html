@@ -4,42 +4,72 @@
   <meta charset="UTF-8">
   <title>兵庫県地域医療総合診療プログラム</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      color: white;
+    }
+
+    .hero {
+      background-image: url("a15ac160e59865259b36.jpg"); /* アップロード後のファイル名 */
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+    }
+
+    .hero h1 {
+      font-size: 3em;
+      margin: 0.5em 0;
+    }
+
+    .hero p {
+      font-size: 1.5em;
+    }
+
+    nav {
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 1em;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 1em;
+      text-decoration: none;
+    }
+
+    footer {
+      background: #222;
+      color: white;
+      text-align: center;
+      padding: 1em;
+    }
+  </style>
 </head>
 <body>
-  <header>
+  <nav>
+    <a href="index.html">ホーム</a>
+    <a href="news.html">ニュース</a>
+    <a href="director.html">責任者より</a>
+    <a href="practice.html">実践内容</a>
+    <a href="facilities.html">研修施設</a>
+    <a href="videos.html">動画紹介</a>
+    <a href="contact.html">お問い合わせ</a>
+  </nav>
+
+  <div class="hero">
     <h1>兵庫県地域医療総合診療プログラム</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html">ホーム</a></li>
-        <li><a href="news.html">ニュース</a></li>
-        <li><a href="director.html">プログラム責任者より</a></li>
-        <li><a href="practice.html">実践内容</a></li>
-        <li><a href="facilities.html">研修施設</a></li>
-        <li><a href="videos.html">動画紹介</a></li>
-        <li><a href="contact.html">お問い合わせ</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <main>
-    <section>
-      <h2>プログラムの概要</h2>
-      <p>兵庫県立丹波医療センターは、丹波地域の地域中核病院であり、地域医療の中心を担っています。特徴的なのは丹波市ミルネ診療所という診療所が同敷地内に併設されており、急性期病院としての機能と慢性期管理ができる診療所としての機能が一体化していることです。急性期治療に携わりながら外来診療をしたり訪問診療をすることができます。近畿地方最大の総合診療のプログラムであり総合診療へやる気にあふれた専攻医を募集します。</p>
-    </section>
-
-    <section>
-      <h2>募集要項</h2>
-      <p><a href="https://tmc.hyogo.jp/trainee/major/img/feature.pdf" target="_blank">PDFはこちら</a></p>
-    </section>
-
-    <section>
-      <h2>プログラム紹介動画</h2>
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/BqSJMpBYFSU" frameborder="0" allowfullscreen></iframe>
-    </section>
-  </main>
+    <p>地域の中核病院から学ぶ、実践的な総合診療。</p>
+  </div>
 
   <footer>
-    <p>&copy; 2025 兵庫県地域医療総合診療プログラム</p>
+    &copy; 2025 兵庫県立丹波医療センター
   </footer>
 </body>
 </html>
