@@ -9,6 +9,7 @@
       background-color: #f0f0f0;
       padding: 2em;
     }
+    
     h1 {
       text-align: center;
     }
@@ -35,7 +36,21 @@
       margin-top: 0.5em;
       line-height: 1.6;
     }
+     nav {
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 1em;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 1em;
+      text-decoration: none;
+    }
+   
+ 
   </style>
+
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       document.querySelectorAll(".news-item").forEach(item => {
@@ -48,6 +63,15 @@
   </script>
 </head>
 <body>
+  <nav>
+    <a href="index.html">ホーム</a>
+    <a href="news.html">ニュース</a>
+    <a href="director.html">責任者より</a>
+    <a href="practice.html">実践内容</a>
+    <a href="facilities.html">研修施設</a>
+    <a href="videos.html">動画紹介</a>
+    <a href="contact.html">お問い合わせ</a>
+  </nav>
   <h1>ニュース一覧</h1>
 
   <div class="news-item">
