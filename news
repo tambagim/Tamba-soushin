@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>ニュース｜兵庫県地域医療総合診療プログラム</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav {
+      background-color: #222;
+      padding: 1em;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 1em;
+      text-decoration: none;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .news-card {
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      margin-bottom: 30px;
+      overflow: hidden;
+    }
+
+    .news-card img {
+      width: 100%;
+      height: auto;
+    }
+
+    .news-content {
+      padding: 20px;
+    }
+
+    .news-content h2 {
+      margin-top: 0;
+      font-size: 1.5em;
+      color: #333;
+    }
+
+    .news-content p {
+      color: #666;
+    }
+
+    footer {
+      background: #222;
+      color: white;
+      text-align: center;
+      padding: 1em;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html">ホーム</a>
+    <a href="news.html">ニュース</a>
+    <a href="director.html">責任者より</a>
+    <a href="practice.html">実践内容</a>
+    <a href="facilities.html">研修施設</a>
+    <a href="videos.html">動画紹介</a>
+    <a href="contact.html">お問い合わせ</a>
+  </nav>
+
+  <div class="container">
+    <h1>ニュース</h1>
+
+    <div class="news-card">
+      <img src="画像のURL.jpg" alt="記事画像">
+      <div class="news-content">
+        <h2>2025年度専攻医の募集を開始しました</h2>
+        <p>兵庫県立丹波医療センターでは、2025年度の専攻医の募集を開始しました。地域医療に関心のある方のご応募をお待ちしています。</p>
+      </div>
+    </div>
+
+    <div class="news-card">
+      <img src="画像のURL2.jpg" alt="記事画像">
+      <div class="news-content">
+        <h2>ミルネ診療所との連携が強化されました</h2>
+        <p>慢性期医療や訪問診療を担うミルネ診療所との連携が強化され、より実践的な総合診療研修が可能になりました。</p>
+      </div>
+    </div>
+
+    <!-- 他のニュース記事も同様に追加 -->
+  </div>
+
+  <footer>
+    &copy; 2025 兵庫県立丹波医療センター
+  </footer>
+</body>
+</html>
