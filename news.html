@@ -31,28 +31,36 @@
    
   </style>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      document.querySelectorAll(".news-item").forEach(item => {
-        item.addEventListener("click", () => {
-          const content = item.querySelector(".news-content");
-          content.style.display = (content.style.display === "block") ? "none" : "block";
-        });
-      });
-    });
+    <script>
+document.addEventListener("DOMContentLoaded", ()=>{
+  const items = document.querySelectorAll(".news-item");
+  let timerId = null;          // 自動クローズ用タイマー
 
-    document.addEventListener("DOMContentLoaded", ()=>{
-      const items=document.querySelectorAll(".news-item");
-      items.forEach(item=>{
-        item.addEventListener("click",()=>{
-          // 開いているカードがあれば閉じる
-          items.forEach(i=>{ if(i!==item) i.classList.remove("open"); });
-          // 自カードの開閉
-          item.classList.toggle("open");
-        });
-      });
+  const closeAll = ()=>{
+    items.forEach(i=> i.classList.remove("open"));
+  };
+
+  const startAutoClose = ()=>{
+    clearTimeout(timerId);
+    timerId = setTimeout(closeAll, 10000);  // 10 秒後に全部閉じる
+  };
+
+  items.forEach(item=>{
+    item.addEventListener("click", ()=>{
+      // ほかを閉じて自カードをトグル
+      items.forEach(i=>{ if(i!==item) i.classList.remove("open"); });
+      item.classList.toggle("open");
+
+      // 開いたらタイマーをリセット
+      if(item.classList.contains("open")) startAutoClose();
     });
-  </script>
+  });
+
+  // ページ内のどこかをタップしたらタイマー延長
+  document.addEventListener("touchstart", startAutoClose);
+});
+</script>
+  
 </head>
 <body>
   <nav>
