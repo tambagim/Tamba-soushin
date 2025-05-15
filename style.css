@@ -58,27 +58,18 @@
 }
 
 /* ───────── モバイル最適化 ───────── */
-@media (max-width:926px){
-  .hero{
-    height:40vh;           /* 高さを 60vh に短縮 */
-    background-position:center; 
-  }
-
-   .hero-text {
-    max-width: 90%;       /* スマホではボックスを画面幅いっぱいまで広げる */
-    padding: 1.2em 1em;    /* パディングも少し調整して余裕を作る */
-  }
-
-  .hero-text h1 {
-    font-size: 1.4rem;     /* 文字が入りきらない場合に少し縮める */
-  }
-
-  .hero-text p {
-    font-size: 1rem;
+/* ───────── 追加／上書きここから ───────── */
+@media (max-width: 600px){                /* ← iPhone を含む狭い画面だけ */
+  .hero-text{
+    max-width: 95%;      /* ボックスをほぼ画面いっぱいに広げる   */
+    width: 95%;          /* 必要なら固定幅にも出来る（任意）      */
+    padding: 1.2em 1em;  /* 左右パディングをやや狭めて余裕を確保   */
+    text-align: center;  /* 中央寄せの方がバランス良ければ採用     */
   }
 }
-}
-   /* ====== 4. コンテンツカード ====== */
+/* ───────── 追加／上書きここまで ───────── */
+
+  /* ====== 4. コンテンツカード ====== */
     .section {
       padding:5rem 8vw; background:#f5f5f5;
       display:flex; flex-wrap:wrap; gap:3rem; justify-content:center;
