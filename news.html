@@ -13,17 +13,6 @@
     *{box-sizing:border-box;}
     body,html{margin:0;padding:0;font-family:"Montserrat",sans-serif;color:#333;}
 
-    /* ========= ナビ（index と同じ構造） ========= */
-    nav{
-      position:fixed;top:0;left:0;right:0;height:64px;
-      background:rgba(0,0,0,.6);backdrop-filter:blur(8px);
-      display:flex;align-items:center;justify-content:center;z-index:1000;
-    }
-    nav ul{list-style:none;display:flex;gap:28px;margin:0;padding:0;}
-    nav a{color:#fff;font-weight:600;letter-spacing:.05em;position:relative;text-decoration:none;}
-    nav a::after{content:"";position:absolute;bottom:-6px;left:0;width:0;height:2px;background:#ffd700;transition:width .3s;}
-    nav a:hover::after{width:100%;}
-
     /* ========= 見出し ========= */
     h1{padding-top:96px;margin:0 0 1.5rem;text-align:center;font-size:2rem;}
 
@@ -48,16 +37,6 @@
     }
     .news-item.open .news-content{max-height:600px;} /* 必要なら数値を調整 */
     .news-item.open .news-title {color:#006699;}
-
-    /* ========= フッター ========= */
-    footer{margin:4rem 0 0;background:#222;color:#fff;text-align:center;padding:2rem 0;font-size:.85rem;}
-
-    /* ========= モバイル調整 ========= */
-    @media(max-width:600px){
-      h1{font-size:1.6rem;}
-      .news-item{padding:1rem;}
-      .news-title{font-size:1rem;}
-    }
   </style>
 </head>
 <body>
