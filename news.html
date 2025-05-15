@@ -40,6 +40,18 @@
         });
       });
     });
+
+    document.addEventListener("DOMContentLoaded", ()=>{
+      const items=document.querySelectorAll(".news-item");
+      items.forEach(item=>{
+        item.addEventListener("click",()=>{
+          // 開いているカードがあれば閉じる
+          items.forEach(i=>{ if(i!==item) i.classList.remove("open"); });
+          // 自カードの開閉
+          item.classList.toggle("open");
+        });
+      });
+    });
   </script>
 </head>
 <body>
