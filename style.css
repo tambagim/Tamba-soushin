@@ -58,17 +58,14 @@
 }
 
 /* ───────── モバイル最適化 ───────── */
-/* ───────── 追加／上書きここから ───────── */
-@media (max-width: 1000px){                /* ← iPhone を含む狭い画面だけ */
+@media (max-width: 820px){      /* ← iPhone + iPad 縦 を網羅 */
   .hero-text{
-     right:0.1rem;
-    max-width: 95%;      /* ボックスをほぼ画面いっぱいに広げる   */
-    width: 95%;          /* 必要なら固定幅にも出来る（任意）      */
-    padding: 1.2em 1em;  /* 左右パディングをやや狭めて余裕を確保   */
-    text-align: center;  /* 中央寄せの方がバランス良ければ採用     */
+    max-width: 95%;
+    padding: 1.2em 1em;
+    text-align: center;
   }
 }
-/* ───────── 追加／上書きここまで ───────── */
+
 
   /* ====== 4. コンテンツカード ====== */
     .section {
