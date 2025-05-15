@@ -40,3 +40,8 @@ footer {
   text-align: center;
   padding: 1em 0;
 }
+@media (min-width: 1024px) {
+  .hero{
+    background-position: center bottom;  /* ←下端を基準に表示 */
+  }
+}
