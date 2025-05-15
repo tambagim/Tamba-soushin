@@ -58,7 +58,7 @@
 }
 
 /* ───────── モバイル最適化 ───────── */
-@media (max-width: 820px){      /* ← iPhone + iPad 縦 を網羅 */
+@media (max-width: 1000px){      
   .hero-text{
     max-width: 95%;
     padding: 1.2em 1em;
