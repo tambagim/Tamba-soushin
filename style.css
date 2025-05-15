@@ -1,43 +1,77 @@
-body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-  margin: 0;
-  padding: 0;
+ <style>
+    /* ====== 1. ベース設定 ====== */
+    *         { box-sizing: border-box; }
+    html,body { margin:0; padding:0; font-family:"Montserrat",sans-serif; color:#333; }
+    a         { text-decoration:none; color:inherit; }
+
+    /* ====== 2. ナビゲーション ====== */
+    nav {
+      position: fixed;               /* 追従ヘッダー */
+      top: 0; left: 0; right: 0;
+      height: 64px;
+      background: rgba(0,0,0,.6);
+      backdrop-filter: blur(8px);     /* 半透明＋ブラー */
+      display: flex;  align-items: center; justify-content: center;
+      z-index: 1000;
+      transition: transform .4s;     /* スクロールで隠す演出用 */
+    }
+    nav.scrolled { transform: translateY(-100%); }
+    nav ul      { list-style:none; display:flex; gap:28px; margin:0; padding:0; }
+    nav a       { color:#fff; font-weight:600; letter-spacing:.05em; position:relative; }
+    nav a::after{ content:""; position:absolute; bottom:-6px; left:0; width:0; height:2px; background:#ffd700; transition:width .3s; }
+    nav a:hover::after{ width:100%; }
+
+    /* ====== 3. ヒーロー ====== */
+   /* ───────── Hero 基本 ───────── */
+.hero{
+  position:relative;
+  background-image:url("hero_trim.jpg");
+  background-size:cover;
+  background-position:center top;  /* ←建物がやや下に来るよう top 寄り */
+  height:80vh;                     /* デフォルトは 80vh に少し縮める */
+  min-height:520px;                /* PC で潰れ過ぎない保険 */
 }
 
-header {
-  background: #333;
-  color: #fff;
-  padding: 1em 0;
+/* 文字ボックス */
+.hero-text{
+  position:absolute;
+  bottom:2rem; right:4%;
+  max-width:38%;
+  padding:1.6rem 2.2rem;
+  background:rgba(0,0,0,.45);
+  backdrop-filter:blur(5px);
+  border-radius:12px;
+  color:#fff;
+  text-align:right;
+  line-height:1.35;
+  text-shadow:1px 1px 3px rgba(0,0,0,.6);
 }
 
-nav {
-  background-color: rgba(0, 0, 0, 0.7);
-  padding: 1em;
-  text-align: center;
+.hero-text h1{
+  font-size:clamp(1.8rem,2.5vw+1rem,3rem);
+  margin:.2em 0 .4em;
 }
 
-nav a {
-  color: white;
-  margin: 0 1em;
-  text-decoration: none;
-  font-weight: bold;
-  transition: color 0.3s;
+.hero-text p{
+  font-size:clamp(.95rem,1.1vw+.5rem,1.3rem);
+  margin:0;
 }
 
-nav a:hover {
-  color: #ffd700;
+/* ───────── モバイル最適化 ───────── */
+@media (max-width:926px){
+  .hero{
+    height:60vh;           /* 高さを 60vh に短縮 */
+    background-position:center 15%; /* ↑さらに上にずらし建物を下げる */
+  }
+
+  .hero-text{
+    right:3%;
+    bottom:1rem;
+    max-width:90%;
+    padding:1.2rem 1.4rem;
+    text-align:center;      /* 文字中央寄せ */
+  }
+
+  .hero-text h1{font-size:1.5rem;}
+  .hero-text p {font-size:1rem;}
 }
-
-
-main {
-  padding: 2em;
-}
-
-footer {
-  background: #333;
-  color: #fff;
-  text-align: center;
-  padding: 1em 0;
-}
-
