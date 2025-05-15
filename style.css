@@ -64,16 +64,19 @@
     background-position:center; 
   }
 
-  .hero-text{
-    right:5%;
-    bottom:1rem;
-    max-width:90%;
-    padding:1.2rem 1rem;
-    text-align:center;      /* 文字中央寄せ */
+   .hero-text {
+    max-width: 90%;       /* スマホではボックスを画面幅いっぱいまで広げる */
+    padding: 1.2em 1em;    /* パディングも少し調整して余裕を作る */
   }
 
-  .hero-text h1{font-size:1.5rem;}
-  .hero-text p {font-size:1rem;}
+  .hero-text h1 {
+    font-size: 1.4rem;     /* 文字が入りきらない場合に少し縮める */
+  }
+
+  .hero-text p {
+    font-size: 1rem;
+  }
+}
 }
    /* ====== 4. コンテンツカード ====== */
     .section {
