@@ -2,71 +2,67 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="style.css">
-  <title>ニュース</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>ニュース一覧｜兵庫県地域医療総合診療プログラム</title>
+
+  <!-- Google Fonts（トップと同じ） -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet"/>
+
   <style>
-    .news-item {
-      background: white;
-      margin: 1em auto;
-      padding: 1em;
-      max-width: 800px;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      cursor: pointer;
-    }
-    .news-title {
-      font-size: 1.2em;
-      margin: 0;
-      font-weight: bold;
-    }
-    .news-date {
-      font-size: 0.9em;
-      color: #555;
-    }
-    .news-content {
-      display: none;
-      margin-top: 0.5em;
-      line-height: 1.6;
-    }
-    .news-content      { max-height:0; overflow:hidden; transition:max-height .4s ease; }
-    .news-item.open .news-content{ max-height:600px; } /* 必要なら数値を増減 */
-    .news-item.open .news-title { color:#006699; }
+    /* ========= 共通トーン ========= */
+    *{box-sizing:border-box;}
+    body,html{margin:0;padding:0;font-family:"Montserrat",sans-serif;color:#333;}
 
-   
+    /* ========= ナビ（index と同じ構造） ========= */
+    nav{
+      position:fixed;top:0;left:0;right:0;height:64px;
+      background:rgba(0,0,0,.6);backdrop-filter:blur(8px);
+      display:flex;align-items:center;justify-content:center;z-index:1000;
+    }
+    nav ul{list-style:none;display:flex;gap:28px;margin:0;padding:0;}
+    nav a{color:#fff;font-weight:600;letter-spacing:.05em;position:relative;text-decoration:none;}
+    nav a::after{content:"";position:absolute;bottom:-6px;left:0;width:0;height:2px;background:#ffd700;transition:width .3s;}
+    nav a:hover::after{width:100%;}
+
+    /* ========= 見出し ========= */
+    h1{padding-top:96px;margin:0 0 1.5rem;text-align:center;font-size:2rem;}
+
+    /* ========= ニュースカード ========= */
+    .news-item{
+      background:#fff;margin:1.5rem auto;padding:1.2rem 1.4rem;max-width:800px;
+      border-radius:10px;box-shadow:0 4px 12px rgba(0,0,0,.08);cursor:pointer;
+      transition:box-shadow .3s;
+    }
+    .news-item:hover{box-shadow:0 6px 16px rgba(0,0,0,.12);}
+    .news-title{font-size:1.15rem;font-weight:700;margin:0;}
+    .news-date {font-size:.9rem;color:#777;margin:.2em 0 0;}
+
+    /* ---- 開閉アニメは max-height だけで制御 ---- */
+    .news-content{
+      display:block;           /* display:none は使わない */
+      max-height:0;
+      overflow:hidden;
+      transition:max-height .4s ease;
+      line-height:1.6;
+      margin-top:.6em;
+    }
+    .news-item.open .news-content{max-height:600px;} /* 必要なら数値を調整 */
+    .news-item.open .news-title {color:#006699;}
+
+    /* ========= フッター ========= */
+    footer{margin:4rem 0 0;background:#222;color:#fff;text-align:center;padding:2rem 0;font-size:.85rem;}
+
+    /* ========= モバイル調整 ========= */
+    @media(max-width:600px){
+      h1{font-size:1.6rem;}
+      .news-item{padding:1rem;}
+      .news-title{font-size:1rem;}
+    }
   </style>
-
-    <script>
- 
-  document.addEventListener("DOMContentLoaded", () => {
-  const cards = document.querySelectorAll(".news-item");
-  let timerId = null;
-
-  // すべて閉じる関数
-  const closeAll = () => {
-    cards.forEach(c => c.classList.remove("open"));
-  };
-
-  // 自動クローズ開始
-  const startAutoClose = () => {
-    clearTimeout(timerId);
-    timerId = setTimeout(closeAll, 10000); // 10秒後に自動で閉じる
-  };
-
-  cards.forEach(card => {
-    card.addEventListener("click", () => {
-      // ほかを閉じて自分をトグル
-      cards.forEach(c => { if (c !== card) c.classList.remove("open"); });
-      card.classList.toggle("open");
-
-      // 開いたらタイマー再スタート
-      if (card.classList.contains("open")) startAutoClose();
-    });
-  });
-});
-</script>
-  
 </head>
 <body>
+
+  <!-- ナビ -->
   <nav>
     <ul>
       <li><a href="index.html">ホーム</a></li>
@@ -78,13 +74,15 @@
       <li><a href="contact.html">お問い合わせ</a></li>
     </ul>
   </nav>
+
   <h1>ニュース一覧</h1>
 
+  <!-- ===== ニュースカード ===== -->
   <div class="news-item">
     <p class="news-title">1月回実施：コアレクチャー（総合診療・家庭医療に必要なフレームワーク）</p>
     <p class="news-date">2025年1月15日</p>
     <div class="news-content">
-      <p>2024年11月5日に総合診療科専攻医の切石医師に、慢性期の疾患のケアについてコアレクチャーをしていただきました。</p>
+      <p>2024年11月5日に総合診療科専攻医の切石医師に、慢性期疾患のケアについてコアレクチャーを行っていただきました。</p>
       <p><a href="news/2025-01.html">続きを読む</a></p>
     </div>
   </div>
@@ -97,8 +95,31 @@
     </div>
   </div>
 
-  <footer>
-    &copy; 2025 兵庫県立丹波医療センター
-  </footer>
+  <!-- 追加記事は .news-item をコピペ -->
+
+  <footer>&copy; 2025 兵庫県立丹波医療センター</footer>
+
+  <!-- ========= 開閉＋自動クローズスクリプト ========= -->
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const cards = document.querySelectorAll(".news-item");
+    let timerId = null;
+
+    const closeAll = () => cards.forEach(c => c.classList.remove("open"));
+
+    const startAutoClose = () => {
+      clearTimeout(timerId);
+      timerId = setTimeout(closeAll, 10000);   // 10 秒後に閉じる
+    };
+
+    cards.forEach(card => {
+      card.addEventListener("click", () => {
+        cards.forEach(c => { if (c !== card) c.classList.remove("open"); });
+        card.classList.toggle("open");
+        if (card.classList.contains("open")) startAutoClose();
+      });
+    });
+  });
+  </script>
 </body>
 </html>
