@@ -60,6 +60,7 @@
 /* ───────── モバイル最適化 ───────── */
 @media (max-width:926px){
   .hero{
+    background-image:url("hero_trim.jpg");
     height:60vh;           /* 高さを 60vh に短縮 */
     background-position:center; 
   }
