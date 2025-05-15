@@ -29,8 +29,8 @@
       line-height: 1.6;
     }
     .news-content      { max-height:0; overflow:hidden; transition:max-height .4s ease; }
-    .news-item.open .news-content { max-height:600px; }  /* 展開時だけ 600px に */
-    .news-item.open .news-title   { color:#006699; }     /* 好みで強調 */
+    .news-item.open .news-content{ max-height:600px; } /* 必要なら数値を増減 */
+    .news-item.open .news-title { color:#006699; }
 
    
   </style>
@@ -40,7 +40,6 @@
       document.querySelectorAll(".news-item").forEach(item => {
         item.addEventListener("click", () => {
           const content = item.querySelector(".news-content");
-          content.style.display = (content.style.display === "block") ? "none" : "block";
         });
       });
     });
