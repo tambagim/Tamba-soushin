@@ -28,6 +28,10 @@
       margin-top: 0.5em;
       line-height: 1.6;
     }
+    .news-content      { max-height:0; overflow:hidden; transition:max-height .4s ease; }
+    .news-item.open .news-content { max-height:600px; }  /* 展開時だけ 600px に */
+    .news-item.open .news-title   { color:#006699; }     /* 好みで強調 */
+
    
   </style>
 
