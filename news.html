@@ -36,7 +36,15 @@
   </style>
 
     <script>
-document.addEventListener("DOMContentLoaded", ()=>{
+      document.addEventListener("DOMContentLoaded", function () {
+      document.querySelectorAll(".news-item").forEach(item => {
+        item.addEventListener("click", () => {
+          const content = item.querySelector(".news-content");
+          content.style.display = (content.style.display === "block") ? "none" : "block";
+        });
+      });
+    });
+  document.addEventListener("DOMContentLoaded", ()=>{
   const items = document.querySelectorAll(".news-item");
   let timerId = null;          // 自動クローズ用タイマー
 
