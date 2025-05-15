@@ -36,39 +36,32 @@
   </style>
 
     <script>
-      document.addEventListener("DOMContentLoaded", function () {
-      document.querySelectorAll(".news-item").forEach(item => {
-        item.addEventListener("click", () => {
-          const content = item.querySelector(".news-content");
-        });
-      });
-    });
-  document.addEventListener("DOMContentLoaded", ()=>{
-  const items = document.querySelectorAll(".news-item");
-  let timerId = null;          // 自動クローズ用タイマー
+ 
+  document.addEventListener("DOMContentLoaded", () => {
+  const cards = document.querySelectorAll(".news-item");
+  let timerId = null;
 
-  const closeAll = ()=>{
-    items.forEach(i=> i.classList.remove("open"));
+  // すべて閉じる関数
+  const closeAll = () => {
+    cards.forEach(c => c.classList.remove("open"));
   };
 
-  const startAutoClose = ()=>{
+  // 自動クローズ開始
+  const startAutoClose = () => {
     clearTimeout(timerId);
-    timerId = setTimeout(closeAll, 10000);  // 10 秒後に全部閉じる
+    timerId = setTimeout(closeAll, 10000); // 10秒後に自動で閉じる
   };
 
-  items.forEach(item=>{
-    item.addEventListener("click", ()=>{
-      // ほかを閉じて自カードをトグル
-      items.forEach(i=>{ if(i!==item) i.classList.remove("open"); });
-      item.classList.toggle("open");
+  cards.forEach(card => {
+    card.addEventListener("click", () => {
+      // ほかを閉じて自分をトグル
+      cards.forEach(c => { if (c !== card) c.classList.remove("open"); });
+      card.classList.toggle("open");
 
-      // 開いたらタイマーをリセット
-      if(item.classList.contains("open")) startAutoClose();
+      // 開いたらタイマー再スタート
+      if (card.classList.contains("open")) startAutoClose();
     });
   });
-
-  // ページ内のどこかをタップしたらタイマー延長
-  document.addEventListener("touchstart", startAutoClose);
 });
 </script>
   
