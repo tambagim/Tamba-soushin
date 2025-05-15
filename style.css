@@ -20,6 +20,12 @@
     nav a::after{ content:""; position:absolute; bottom:-6px; left:0; width:0; height:2px; background:#ffd700; transition:width .3s; }
     nav a:hover::after{ width:100%; }
 
+   @media (max-width: 600px){
+     nav ul{ gap: 14px; }            /* アイテム間のすき間を半分弱に */
+     nav a { font-size: .8rem; }     /* 例：14px 程度に縮小（お好みで .75rem などに） */
+     /* さらに詰めたい場合：nav{ padding:0 8px; } */
+   }
+
     /* ====== 3. ヒーロー ====== */
    /* ───────── Hero 基本 ───────── */
 .hero{
@@ -68,9 +74,7 @@
     max-width: 95%;
     padding: 1.2em 1em;
     text-align: center;
-  }
-  nav ul{ gap: 14px; }           
-  nav a { font-size: .8rem; }  
+  }  
 }
       
 
