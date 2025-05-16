@@ -59,6 +59,7 @@
   /* 3) 行高をやや詰めて 2 行目との間を調整 */
   line-height: 1.2;
   margin: .2em 0 .4em;
+}
 
 .hero-text p{
   font-size:clamp(.95rem,1.1vw+.5rem,1.3rem);
