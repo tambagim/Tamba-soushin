@@ -84,9 +84,13 @@
 
   /* ====== 4. コンテンツカード ====== */
     .section {
-      padding:5rem 8vw; background:#f5f5f5;
-      display:flex; flex-wrap:wrap; gap:3rem; justify-content:center;
-    }
+     display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+     gap: 2.5rem;
+     padding: 5rem 8vw;
+     background: #f5f5f5;
+   }
+
     .card {
       width:min(330px,100%); background:#fff; border-radius:12px;
       box-shadow:0 8px 14px rgba(0,0,0,.08); overflow:hidden;
