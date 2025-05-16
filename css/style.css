@@ -79,7 +79,19 @@
     text-align: center;
   }  
 }
-      
+   /* すでにある .mini-hero 定義に追記 */
+
+.mini-hero {
+  margin-top: 64px;    /* ← 追加 */
+  background: url("img/hero_pc.jpg") center/cover;
+  height: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-shadow: 1px 1px 4px rgba(0,0,0,.6);
+}
+
 
 
   /* ====== 4. コンテンツカード ====== */
