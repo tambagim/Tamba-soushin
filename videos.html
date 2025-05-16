@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>動画紹介｜兵庫県地域医療総合診療プログラム</title>
+
+  <!-- 共通スタイル -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- ページ固有の軽量追加 -->
+  <style>
+    /* タイトルバナー */
+    .mini-hero{
+      background:url("img/hero_pc.jpg") center/cover;
+      height:240px;display:flex;align-items:center;justify-content:center;
+      color:#fff;text-shadow:1px 1px 4px rgba(0,0,0,.6);
+    }
+    .mini-hero h1{margin:0;font-size:2.2rem}
+
+    /* 動画グリッド */
+    .grid{
+      max-width:960px;margin:3rem auto;padding:0 1.2rem;
+      display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:2rem;
+    }
+    .video-card{
+      background:#fff;border-radius:10px;box-shadow:0 4px 12px rgba(0,0,0,.08);
+      overflow:hidden;display:flex;flex-direction:column;
+    }
+    .video-card h2{font-size:1.2rem;margin:.8rem 1rem .4rem}
+    .video-card p {font-size:.9rem;margin:0 1rem 1rem;line-height:1.6}
+    /* 16:9 レスポンシブ iframe */
+    .video-wrapper{position:relative;padding-top:56.25%;}
+    .video-wrapper iframe{
+      position:absolute;top:0;left:0;width:100%;height:100%;border:0;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ナビ -->
+<nav>
+  <ul>
+    <li><a href="index.html">ホーム</a></li>
+    <li><a href="news.html">ニュース</a></li>
+    <li><a href="director.html">責任者より</a></li>
+    <li><a href="practice.html">実践内容</a></li>
+    <li><a href="facilities.html">研修施設</a></li>
+    <li><a href="videos.html">動画紹介</a></li>
+    <li><a href="contact.html">お問い合わせ</a></li>
+  </ul>
+</nav>
+
+<header class="mini-hero"><h1>動画紹介</h1></header>
+
+<!-- ===== 動画カード ===== -->
+<div class="grid">
+
+  <!-- 1. プログラム紹介ダイジェスト -->
+  <article class="video-card">
+    <div class="video-wrapper">
+      <!-- 例：YouTube の埋め込み。動画IDを差し替えてください -->
+      <iframe src="https://www.youtube.com/embed/BqSJMpBYFSU" allowfullscreen></iframe>
+    </div>
+    <h2>プログラム紹介ダイジェスト</h2>
+    <p>丹波医療センター総合診療プログラムを 3 分でご紹介。</p>
+  </article>
+
+  <!-- 2. 研修医インタビュー -->
+  <article class="video-card">
+    <div class="video-wrapper">
+      <iframe src="https://www.youtube.com/embed/VIDEO_ID_2" allowfullscreen></iframe>
+    </div>
+    <h2>研修医インタビュー</h2>
+    <p>専攻医が語る “丹波で学ぶ魅力”。</p>
+  </article>
+
+  <!-- 3. ミルネ診療所での在宅医療 -->
+  <article class="video-card">
+    <div class="video-wrapper">
+      <iframe src="https://www.youtube.com/embed/VIDEO_ID_3" allowfullscreen></iframe>
+    </div>
+    <h2>在宅医療の現場</h2>
+    <p>ミルネ診療所チームが行う訪問診療の様子。</p>
+  </article>
+
+  <!-- 追加動画は .video-card をコピーして iframe の動画IDと説明を更新 -->
+</div>
+
+<footer>&copy; 2025 兵庫県立丹波医療センター</footer>
+</body>
+</html>
