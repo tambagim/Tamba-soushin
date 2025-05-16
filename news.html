@@ -3,21 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <link rel="stylesheet" href="css/style.css">
   <title>ニュース一覧｜兵庫県地域医療総合診療プログラム</title>
 
-  <!-- Google Fonts（トップと同じ） -->
+  <!-- 共通スタイル -->
+  <link rel="stylesheet" href="css/style.css">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet"/>
 
   <style>
-    /* ========= 共通トーン ========= */
+    /* ===== 共通トーン追加 ===== */
     *{box-sizing:border-box;}
     body,html{margin:0;padding:0;font-family:"Montserrat",sans-serif;color:#333;}
 
-    /* ========= 見出し ========= */
-    h1{padding-top:96px;margin:0 0 1.5rem;text-align:center;font-size:2rem;}
+    /* ===== mini-hero（タイトルバナー）===== */
+    .mini-hero{
+      background:url("img/hero_pc.jpg") center/cover;
+      height:240px; display:flex; align-items:center; justify-content:center;
+      color:#fff; text-shadow:1px 1px 4px rgba(0,0,0,.6);
+    }
+    .mini-hero h1{margin:0;font-size:2.2rem;}
 
-    /* ========= ニュースカード ========= */
+    /* ===== ニュースカード ===== */
     .news-item{
       background:#fff;margin:1.5rem auto;padding:1.2rem 1.4rem;max-width:800px;
       border-radius:10px;box-shadow:0 4px 12px rgba(0,0,0,.08);cursor:pointer;
@@ -27,22 +32,21 @@
     .news-title{font-size:1.15rem;font-weight:700;margin:0;}
     .news-date {font-size:.9rem;color:#777;margin:.2em 0 0;}
 
-    /* ---- 開閉アニメは max-height だけで制御 ---- */
     .news-content{
-      display:block;           /* display:none は使わない */
+      display:block;
       max-height:0;
       overflow:hidden;
       transition:max-height .4s ease;
       line-height:1.6;
       margin-top:.6em;
     }
-    .news-item.open .news-content{max-height:600px;} /* 必要なら数値を調整 */
+    .news-item.open .news-content{max-height:600px;}
     .news-item.open .news-title {color:#006699;}
   </style>
 </head>
 <body>
 
-  <!-- ナビ -->
+  <!-- ナビ（共通） -->
   <nav>
     <ul>
       <li><a href="index.html">ホーム</a></li>
@@ -55,7 +59,10 @@
     </ul>
   </nav>
 
-  <h1>ニュース一覧</h1>
+  <!-- mini-hero を追加 -->
+  <header class="mini-hero">
+    <h1>ニュース一覧</h1>
+  </header>
 
   <!-- ===== ニュースカード ===== -->
   <div class="news-item">
@@ -75,28 +82,24 @@
     </div>
   </div>
 
-  <!-- 追加記事は .news-item をコピペ -->
+  <!-- 追加記事は .news-item をコピー -->
 
   <footer>&copy; 2025 兵庫県立丹波医療センター</footer>
 
-  <!-- ========= 開閉＋自動クローズスクリプト ========= -->
+  <!-- 開閉＋自動クローズ -->
   <script>
   document.addEventListener("DOMContentLoaded", () => {
     const cards = document.querySelectorAll(".news-item");
-    let timerId = null;
+    let timerId=null;
 
-    const closeAll = () => cards.forEach(c => c.classList.remove("open"));
+    const closeAll = ()=>cards.forEach(c=>c.classList.remove("open"));
+    const startAutoClose = ()=>{clearTimeout(timerId);timerId=setTimeout(closeAll,10000);};
 
-    const startAutoClose = () => {
-      clearTimeout(timerId);
-      timerId = setTimeout(closeAll, 10000);   // 10 秒後に閉じる
-    };
-
-    cards.forEach(card => {
-      card.addEventListener("click", () => {
-        cards.forEach(c => { if (c !== card) c.classList.remove("open"); });
+    cards.forEach(card=>{
+      card.addEventListener("click",()=>{
+        cards.forEach(c=>{if(c!==card)c.classList.remove("open");});
         card.classList.toggle("open");
-        if (card.classList.contains("open")) startAutoClose();
+        if(card.classList.contains("open")) startAutoClose();
       });
     });
   });
