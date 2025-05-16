@@ -27,7 +27,7 @@
    /* ───────── Hero 基本 ───────── */
 .hero{
   position:relative;
-  background-image:url("hero_pc.jpg");
+  background-image:url("img/hero_pc.jpg");
   background-size:cover;
   background-position:center;  
   height:80vh;                     /* デフォルトは 80vh に少し縮める */
