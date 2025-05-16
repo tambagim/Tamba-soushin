@@ -141,5 +141,20 @@
    }
    .pdf-link .label{flex:1 1 auto;font-size:1rem;letter-spacing:.03em;}
    .pdf-link .arrow{font-size:1.4rem;font-weight:700;line-height:1;}
-   
+
+   .intro-message {
+     background: #fff;
+     padding: 3rem 8vw;
+   }
+   .intro-inner {
+     max-width: 800px;
+     margin: 0 auto;
+     font-size: 1rem;
+     line-height: 1.8;
+     color: #333;
+   }
+   .intro-inner p {
+     margin-bottom: 1.5rem;
+   }
+
    
