@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>お問い合わせ｜兵庫県地域医療総合診療プログラム</title>
+
+  <!-- 共通スタイル -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- ページ固有の追加だけ内包 -->
+  <style>
+    /* タイトルバナー */
+    .mini-hero{
+      background:url("img/hero_pc.jpg") center/cover;
+      height:240px;display:flex;align-items:center;justify-content:center;
+      color:#fff;text-shadow:1px 1px 4px rgba(0,0,0,.6);
+    }
+    .mini-hero h1{margin:0;font-size:2.2rem}
+
+    /* コンテンツカード */
+    .contact-card{
+      max-width:640px;margin:3rem auto;padding:2rem 2.5rem;
+      background:#fff;border-radius:10px;box-shadow:0 4px 12px rgba(0,0,0,.08);
+      line-height:1.8;
+    }
+    .contact-card h2{margin-top:0;font-size:1.3rem;border-left:6px solid #006699;padding-left:.6rem}
+    .contact-card p{margin:.6rem 0;}
+    .contact-card a{color:#006699;text-decoration:underline;}
+    /* フォーム */
+    form{display:flex;flex-direction:column;gap:.8rem;margin-top:1.2rem}
+    input,textarea{padding:.6rem;border:1px solid #ccc;border-radius:6px;font-family:inherit;font-size:1rem}
+    button{
+      padding:.7rem;border:none;border-radius:6px;background:#006699;color:#fff;
+      font-size:1rem;cursor:pointer;transition:opacity .3s;
+    }
+    button:hover{opacity:.85;}
+  </style>
+</head>
+<body>
+
+<!-- ナビ（共通） -->
+<nav>
+  <ul>
+    <li><a href="index.html">ホーム</a></li>
+    <li><a href="news.html">ニュース</a></li>
+    <li><a href="director.html">責任者より</a></li>
+    <li><a href="practice.html">実践内容</a></li>
+    <li><a href="facilities.html">研修施設</a></li>
+    <li><a href="videos.html">動画紹介</a></li>
+    <li><a href="contact.html">お問い合わせ</a></li>
+  </ul>
+</nav>
+
+<header class="mini-hero"><h1>お問い合わせ</h1></header>
+
+<!-- お問い合わせカード -->
+<div class="contact-card">
+  <h2>連絡先</h2>
+
+  <p>兵庫県立丹波医療センター&nbsp;総合診療科&nbsp;専攻医募集担当</p>
+  <p>〒669-4193&nbsp;兵庫県丹波市氷上町石生2001-1</p>
+  <p>電話：◆ 0795-xx-xxxx（代表）</p>
+  <p>メール：<a href="mailto:◆your-address@hospital.jp">◆your-address@hospital.jp</a></p>
+
+  <hr>
+
+  <h2>お問い合わせフォーム</h2>
+  <!-- ── Formspree など外部フォームに送信したい場合は action を差し替え ── -->
+  <form action="mailto:◆your-address@hospital.jp" method="post" enctype="text/plain">
+    <input type="text"     name="お名前"    placeholder="お名前" required>
+    <input type="email"    name="メール"    placeholder="メールアドレス" required>
+    <textarea name="メッセージ" rows="5" placeholder="お問い合わせ内容" required></textarea>
+    <button type="submit">送信する</button>
+  </form>
+
+  <p style="font-size:.85rem;color:#666;margin-top:.6rem">
+    ※ 上記メールリンクが開かない場合や添付ファイルを送りたい場合は、直接メールソフトから ◆your-address@hospital.jp までご連絡ください。
+  </p>
+</div>
+
+<footer>&copy; 2025 兵庫県立丹波医療センター</footer>
+</body>
+</html>
