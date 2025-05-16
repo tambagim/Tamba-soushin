@@ -83,7 +83,7 @@
 
 .mini-hero {
   margin-top: 64px;    /* ← 追加 */
-  background: url("img/hero_pc.jpg") center/cover;
+  background: url("../img/hero_pc.jpg") center/cover;
   height: 240px;
   display: flex;
   align-items: center;
