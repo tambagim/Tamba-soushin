@@ -82,14 +82,28 @@
    /* すでにある .mini-hero 定義に追記 */
 
 .mini-hero {
-  margin-top: 64px;    /* ← 追加 */
-  background: url("../img/hero_pc.jpg") center/cover;
+  /* ヘッダー分のオフセット */
+  margin-top: 64px;
+
+  /* 高さを固定（必ず240pxの高さになる） */
   height: 240px;
+  min-height: 240px;
+  max-height: 240px;
+
+  /* 背景設定はそのまま */
+  background: url("img/hero_pc.jpg") center/cover;
   display: flex;
   align-items: center;
   justify-content: center;
+
+  /* 文字色・シャドウもそのまま */
   color: #fff;
   text-shadow: 1px 1px 4px rgba(0,0,0,.6);
+}
+
+.mini-hero h1 {
+  margin: 0;
+  font-size: 2.2rem;
 }
 
 
