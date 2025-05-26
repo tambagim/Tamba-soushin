@@ -167,7 +167,16 @@
    }
    .pdf-link .label{flex:1 1 auto;font-size:1rem;letter-spacing:.03em;}
    .pdf-link .arrow{font-size:1.4rem;font-weight:700;line-height:1;}
-
+   /* ===== イントロ写真 ===== */
+   .intro-inner .intro-photo {
+     display: block;
+     width: 100%;
+     max-width: 800px;         /* 画面幅に合わせて最大サイズを設定 */
+     height: auto;
+     margin: 0 auto 1.5rem;    /* 上：0、下：テキストとの隙間 */
+     border-radius: 8px;
+     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+   }
    .intro-message {
      background: #fff;
      padding: 3rem 8vw;
